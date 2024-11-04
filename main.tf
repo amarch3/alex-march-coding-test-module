@@ -2,7 +2,7 @@ provider "aws" {
   region = var.region
 }
 
-# Lookup the target default VPC
+# Lookup the target VPC
 data "aws_vpc" "vpc" {
   filter {
     name   = "cidr"
@@ -10,7 +10,7 @@ data "aws_vpc" "vpc" {
   }
 }
 
-# Lookup the target default public subnet
+# Lookup the target public subnet
 data "aws_subnet" "public_subnet" {
   filter {
     name   = "cidrBlock"
@@ -19,7 +19,7 @@ data "aws_subnet" "public_subnet" {
   vpc_id = data.aws_vpc.vpc.id
 }
 
-# Lookup the target default private subnet
+# Lookup the target private subnet
 data "aws_subnet" "private_subnet" {
   filter {
     name   = "cidrBlock"
