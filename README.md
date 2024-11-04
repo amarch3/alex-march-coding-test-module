@@ -3,6 +3,10 @@
 ## Overview
 This is a Terraform module for providing internet access to an existing VPC private subnet using a NAT Gateway. The module creates a NAT Gateway in an existing public subnet and modifies an existing private subnet's route table to route internet traffic through the NAT Gateway, enabling outbound internet access for resources within the private subnet.
 
+- **`Elastic IP`**: A public IPv4 address that is used to provide consistent internet connectivity for a NAT Gateway in your AWS VPC.
+- **`NAT Gateway`**: A service that allows resources in your private subnet to access the internet for outbound traffic, crucial for enabling updates and API calls while keeping the subnet secure from inbound traffic.
+- **`Route Table Entry`**: A routing rule added to the private subnet's route table that directs outbound traffic to the NAT Gateway, enabling internet access from the private subnet.
+
 This module is part of the **Platform Engineer Coding Test v1** for the 1st stage interview at Motilent.
 
 ## Usage
